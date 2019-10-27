@@ -3,13 +3,17 @@ import './less/App.less';
 import AppHeader from './layout/AppHeader';
 import AppMain from './layout/AppMain';
 import AppFooter from './layout/AppFooter';
+import { Provider } from 'react-redux';
+import store from './duck/store';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <AppHeader />
-      <AppMain />
-      <AppFooter />
+      <Provider store={store}>
+        <AppHeader />
+        <AppMain />
+        <AppFooter />
+      </Provider>
     </div>
   );
 };
