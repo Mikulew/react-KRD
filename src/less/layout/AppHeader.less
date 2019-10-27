@@ -1,12 +1,35 @@
 @import '../abstracts/_variables.less';
 
 .l-header-container {
+  display: flex;
+  align-items: center;
   background-color: @dark-blue;
   min-height: 165px;
 }
 
-.l-header-title {
-  font-size: 26px;
+.l-header-container-box {
+  width: 50%;
+}
+
+.l-header-container-box--left {
+  flex-direction: flex-start;
+}
+
+.l-header-container-box--right {
+  flex-direction: flex-end;
+}
+
+.l-header-text {
+  font-size: 14px;
   font-weight: 700;
+  text-transform: uppercase;
   color: @white;
+}
+
+.l-header-text--red {
+  color: @red;
+}
+
+.l-header-text--large {
+  font-size: 40px;
 }

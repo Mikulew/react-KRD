@@ -1,0 +1,26 @@
+@import '../abstracts/_variables.less';
+
+.search-bar {
+  height: 45px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-bar__input {
+  text-indent: 10px;
+  width: 300px;
+}
+
+.search-bar__button {
+  font-size: 12px;
+  font-weight: 700;
+  background-color: @red;
+  color: @white;
+  text-transform: uppercase;
+  width: 145px;
+}
+
+.search-bar__button:hover {
+  background-color: darken(@red, 10%);
+}
