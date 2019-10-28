@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
+import NumberCases from '../components/NumberCases';
 import '../less/layout/AppHeader.less';
 
 const AppHeader: React.FC = () => {
@@ -11,7 +12,9 @@ const AppHeader: React.FC = () => {
       </div>
       <div className="l-header-container-box l-header-container-box--right">
         <p className="l-header-text l-header-text--red">całkowita liczba spraw</p>
-        <p className="l-header-text l-header-text--large">88</p>
+        <p className="l-header-text l-header-text--large">
+          <NumberCases />
+        </p>
       </div>
     </header>
   );
