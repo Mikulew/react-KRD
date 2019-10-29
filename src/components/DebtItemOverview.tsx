@@ -14,7 +14,6 @@ type Debt = {
       debt: number | null;
     };
   };
-  activedDebt: number | null;
 };
 
 const DebtItemOverview: React.FC<Debt> = props => {

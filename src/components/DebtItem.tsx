@@ -11,12 +11,13 @@ type Debt = {
   DocumentType?: string;
   Price?: number;
   Number?: string;
+  activedDebt?: number | null;
 };
 
 const DebtItem: React.FC<Debt> = props => {
-  const isExtended = false;
+  const { Id, activedDebt } = props;
 
-  return isExtended ? (
+  return activedDebt === Id ? (
     <DebtItemDetailsContainer {...props} />
   ) : (
     <DebtItemOverviewContainer {...props} />
