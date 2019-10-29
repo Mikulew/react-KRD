@@ -1,6 +1,6 @@
 import React from 'react';
-import DebtItemOverview from './DebtItemOverview';
-import DebtItemDetails from './DebtItemDetails';
+import DebtItemOverviewContainer from '../containers/DebtItemOverviewContainer';
+import DebtItemDetailsContainer from '../containers/DebtItemDetailsContainer';
 
 type Debt = {
   Id?: number,
@@ -16,7 +16,7 @@ type Debt = {
 const DebtItem: React.FC<Debt> = props => {
   const isExtended = false;
 
-  return (isExtended ? <DebtItemDetails {...props} /> : <DebtItemOverview {...props} />);
+  return (isExtended ? <DebtItemDetailsContainer {...props} /> : <DebtItemOverviewContainer {...props} />);
 };
 
 export default DebtItem;
