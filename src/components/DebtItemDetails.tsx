@@ -10,10 +10,18 @@ type Debt = {
   DocumentType?: string;
   Price?: number;
   Number?: string;
+  activateDebt: (
+    id?: number | null,
+  ) => {
+    type: string;
+    payload: {
+      debt: number | null;
+    };
+  };
 };
 
 const DebtItemDetails: React.FC<Debt> = props => {
-  const { Name, Value, NIP } = props;
+  const { Name, Value, NIP, activateDebt } = props;
 
   return (
     <tr>
@@ -21,7 +29,9 @@ const DebtItemDetails: React.FC<Debt> = props => {
       <td>{NIP}</td>
       <td>{Value}</td>
       <td>
-        <button className="c-debt-item__button">Mniej</button>
+        <button onClick={() => activateDebt(null)} className="c-debt-item__button">
+          Mniej
+        </button>
       </td>
     </tr>
   );
