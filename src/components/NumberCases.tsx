@@ -16,7 +16,7 @@ const NumberCases: React.FC = () => {
     getNumberCases();
   }, []);
 
-  return (<>{number}</>);
+  return <>{number}</>;
 };
 
 export default NumberCases;

@@ -3,10 +3,10 @@ import DebtItemOverview from '../components/DebtItemOverview';
 import { activateDebt } from '../duck/actions';
 
 interface State {
-  activedDebt: {}
-};
+  activedDebt: number | null;
+}
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state: State): State => {
   return {
     activedDebt: state.activedDebt,
   };

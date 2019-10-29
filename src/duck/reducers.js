@@ -2,7 +2,7 @@ import types from './types.tsx';
 
 const INITIAL_STATE = {
   debts: [],
-  activedDebt: {},
+  activedDebt: null,
 };
 
 const rootReducer = (state = INITIAL_STATE, action) => {

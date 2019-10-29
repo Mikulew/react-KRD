@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import '../less/components/DebtList.less';
 import axios from 'axios';
-import DebtItem from '../components/DebtItem';
+import DebtItem from './DebtItem';
 
 export interface DebtsProps {}
 
 export interface Debt {
-  Id?: number,
-  Name?: string,
-  NIP?: string,
-  Value?: number,
-  Address?: string,
-  DocumentType?: string,
-  Price?: number,
-  Number?: string,
+  Id?: number;
+  Name?: string;
+  NIP?: string;
+  Value?: number;
+  Address?: string;
+  DocumentType?: string;
+  Price?: number;
+  Number?: string;
 }
 
 const DebtList: React.FC<DebtsProps> = () => {
@@ -42,9 +42,9 @@ const DebtList: React.FC<DebtsProps> = () => {
         </tr>
       </thead>
       <tbody>
-      {debts.map(debt => (
-        <DebtItem key={debt.Id} {...debt} />
-      ))}
+        {debts.map(debt => (
+          <DebtItem key={debt.Id} {...debt} />
+        ))}
       </tbody>
     </table>
   );
