@@ -1,11 +1,49 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../less/components/SearchBar.less';
 
-const SearchBar: React.FC = () => {
-  const [text, setText] = useState('test');
+export interface DebtsProps {
+  setDebts: (
+    debts: Debt[],
+  ) => {
+    type: string;
+    payload: {
+      debts: Debt[];
+    };
+  };
+  activateDebt: (
+    id?: null,
+  ) => {
+    type: string;
+    payload: {
+      debt: null;
+    };
+  };
+}
 
-  const search = () => {
-    console.log(text);
+export interface Debt {
+  Id?: number;
+  Name?: string;
+  NIP?: string;
+  Value?: number;
+  Address?: string;
+  DocumentType?: string;
+  Price?: number;
+  Number?: string;
+}
+
+const SearchBar: React.FC<DebtsProps> = props => {
+  const [text, setText] = useState('');
+  const { setDebts, activateDebt } = props;
+
+  const search = async () => {
+    const result = await axios.post(
+      'http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts',
+      { text },
+    );
+    const { data } = await result;
+    setDebts(data);
+    activateDebt(null);
   };
 
   return (
