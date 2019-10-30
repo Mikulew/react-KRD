@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { BASE_URL } from '../constants';
 
 const NumberCases: React.FC = () => {
   const [number, setNumber] = useState<number>(0);
 
   const getNumberCases = async () => {
-    const result = await axios.get(
-      'http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetDebtsCount',
-    );
+    const result = await axios.get(`${BASE_URL}/GetDebtsCount`);
     const { data } = await result;
     setNumber(data);
   };

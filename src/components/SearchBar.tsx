@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../less/components/SearchBar.less';
+import { BASE_URL } from '../constants';
 
 export interface DebtsProps {
   setDebts: (
@@ -39,10 +40,7 @@ const SearchBar: React.FC<DebtsProps> = props => {
 
   const searchFilteredDebts = async () => {
     try {
-      const result = await axios.post(
-        'http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts',
-        { text },
-      );
+      const result = await axios.post(`${BASE_URL}/GetFilteredDebts`, { text });
       const { data } = await result;
       setDebts(data);
       activateDebt(null);

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import '../less/components/DebtList.less';
 import axios from 'axios';
 import DebtItemContainer from '../containers/DebtItemContainer';
+import { BASE_URL } from '../constants';
 
 export interface DebtsProps {
   debts?: [];
@@ -30,9 +31,7 @@ const DebtList: React.FC<DebtsProps> = props => {
   const { debts, setDebts } = props;
 
   const getDebts = async () => {
-    const result = await axios.get(
-      'http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetTopDebts',
-    );
+    const result = await axios.get(`${BASE_URL}/GetTopDebts`);
     const { data } = await result;
     setDebts(data);
   };

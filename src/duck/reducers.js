@@ -1,9 +1,5 @@
 import types from './types.tsx';
-
-const INITIAL_STATE = {
-  debts: [],
-  activedDebt: null,
-};
+import { INITIAL_STATE } from '../constants';
 
 const rootReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
