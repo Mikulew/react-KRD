@@ -33,30 +33,43 @@ export interface Debt {
 }
 
 const SearchBar: React.FC<DebtsProps> = props => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
   const { setDebts, activateDebt } = props;
 
-  const search = async () => {
-    const result = await axios.post(
-      'http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts',
-      { text },
-    );
-    const { data } = await result;
-    setDebts(data);
-    activateDebt(null);
+  const searchFilteredDebts = async () => {
+    try {
+      const result = await axios.post(
+        'http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts',
+        { text },
+      );
+      const { data } = await result;
+      setDebts(data);
+      activateDebt(null);
+      setError(null);
+    } catch {
+      setError('Podana fraza musi być większa niż 3 znaki');
+    }
   };
 
   return (
     <>
-      <input
-        value={text}
-        onChange={e => setText(e.target.value)}
-        type="search"
-        className="search-bar search-bar__input"
-      />
-      <button type="button" className="search-bar search-bar__button" onClick={() => search()}>
-        szukaj
-      </button>
+      <div>
+        <input
+          value={text}
+          onChange={e => setText(e.target.value)}
+          type="search"
+          className="search-bar search-bar__input"
+        />
+        <button
+          type="button"
+          className="search-bar search-bar__button"
+          onClick={() => searchFilteredDebts()}
+        >
+          szukaj
+        </button>
+      </div>
+      {error !== null ? <div className="search-bar__error-text">{error}</div> : null}
     </>
   );
 };
