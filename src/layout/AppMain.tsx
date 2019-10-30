@@ -1,11 +1,11 @@
 import React from 'react';
 import '../less/layout/AppMain.less';
-import DebtList from '../components/DebtList';
+import DebtListContainer from '../containers/DebtListContainer';
 
 const AppMain: React.FC = () => {
   return (
     <main className="container l-main-container">
-      <DebtList />
+      <DebtListContainer />
     </main>
   );
 };

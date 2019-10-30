@@ -1,9 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import '../less/components/DebtList.less';
 import axios from 'axios';
 import DebtItemContainer from '../containers/DebtItemContainer';
 
-export interface DebtsProps {}
+export interface DebtsProps {
+  debts?: [];
+  setDebts: (
+    debts: Debt[],
+  ) => {
+    type: string;
+    payload: {
+      debts: Debt[];
+    };
+  };
+}
 
 export interface Debt {
   Id?: number;
@@ -16,10 +26,10 @@ export interface Debt {
   Number?: string;
 }
 
-const DebtList: React.FC<DebtsProps> = () => {
-  const [debts, setDebts] = useState<Debt[]>([]);
+const DebtList: React.FC<DebtsProps> = props => {
+  const { debts, setDebts } = props;
 
-  const getTopDebts = async () => {
+  const getDebts = async () => {
     const result = await axios.get(
       'http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetTopDebts',
     );
@@ -28,7 +38,7 @@ const DebtList: React.FC<DebtsProps> = () => {
   };
 
   useEffect(() => {
-    getTopDebts();
+    getDebts();
   }, []);
 
   return (
@@ -42,9 +52,7 @@ const DebtList: React.FC<DebtsProps> = () => {
         </tr>
       </thead>
       <tbody>
-        {debts.map(debt => (
-          <DebtItemContainer key={debt.Id} {...debt} />
-        ))}
+        {debts && debts.map((debt: Debt) => <DebtItemContainer key={debt.Id} {...debt} />)}
       </tbody>
     </table>
   );
