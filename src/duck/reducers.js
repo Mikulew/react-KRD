@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 
 const rootReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case types.GET_DEBTS:
+    case types.SET_DEBTS:
       return {
         ...state,
         debts: action.payload.debts,

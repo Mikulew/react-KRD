@@ -1,7 +1,7 @@
 import types from './types.tsx';
 
-export const getDebts = debts => ({
-  type: types.GET_DEBTS,
+export const setDebts = debts => ({
+  type: types.SET_DEBTS,
   payload: { debts },
 });
 
