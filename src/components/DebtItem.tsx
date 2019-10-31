@@ -11,14 +11,14 @@ interface Props {
   documentType?: string;
   price?: number;
   number?: string;
-  activedDebt?: number | null;
+  activatedDebt?: number | null;
 }
 
 const DebtItem: React.FC<Props> = props => {
-  const { id, name, nip, value, address, documentType, price, number, activedDebt } = props;
-  const isActivedDebt = activedDebt === id;
+  const { id, name, nip, value, address, documentType, price, number, activatedDebt } = props;
+  const isActivatedDebt = activatedDebt === id;
 
-  return isActivedDebt ? (
+  return isActivatedDebt ? (
     <DebtItemDetailsContainer
       id={id}
       name={name}

@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import DebtItem from '../components/DebtItem';
 
 interface State {
-  activedDebt: number | null;
+  activatedDebt: number | null;
 }
 
 const mapStateToProps = (state: State): State => {
   return {
-    activedDebt: state.activedDebt,
+    activatedDebt: state.activatedDebt,
   };
 };
 

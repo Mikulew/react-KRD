@@ -26,7 +26,7 @@ interface Debt {
   DocumentType?: string;
   Price?: number;
   Number?: string;
-  activedDebt?: number | null;
+  activatedDebt?: number | null;
 }
 
 const DebtList: React.FC<Props> = props => {

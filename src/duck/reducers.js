@@ -11,7 +11,7 @@ const rootReducer = (state = INITIAL_STATE, action) => {
     case types.ACTIVATE_DEBT:
       return {
         ...state,
-        activedDebt: action.payload.debt,
+        activatedDebt: action.payload.debt,
       };
     default:
       return state;
