@@ -2,25 +2,35 @@ import React from 'react';
 import DebtItemOverviewContainer from '../containers/DebtItemOverviewContainer';
 import DebtItemDetailsContainer from '../containers/DebtItemDetailsContainer';
 
-type Debt = {
-  Id?: number;
-  Name?: string;
-  NIP?: string;
-  Value?: number;
-  Address?: string;
-  DocumentType?: string;
-  Price?: number;
-  Number?: string;
+interface Props {
+  id?: number;
+  name?: string;
+  nip?: string;
+  value?: number;
+  address?: string;
+  documentType?: string;
+  price?: number;
+  number?: string;
   activedDebt?: number | null;
-};
+}
 
-const DebtItem: React.FC<Debt> = props => {
-  const { Id, activedDebt } = props;
+const DebtItem: React.FC<Props> = props => {
+  const { id, name, nip, value, address, documentType, price, number, activedDebt } = props;
+  const isActivedDebt = activedDebt === id;
 
-  return activedDebt === Id ? (
-    <DebtItemDetailsContainer {...props} />
+  return isActivedDebt ? (
+    <DebtItemDetailsContainer
+      id={id}
+      name={name}
+      nip={nip}
+      value={value}
+      address={address}
+      documentType={documentType}
+      price={price}
+      number={number}
+    />
   ) : (
-    <DebtItemOverviewContainer {...props} />
+    <DebtItemOverviewContainer id={id} name={name} nip={nip} value={value} />
   );
 };
 

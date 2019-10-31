@@ -1,11 +1,11 @@
 import React from 'react';
 import '../less/components/DebtItem.less';
 
-type Debt = {
-  Id?: number;
-  Name?: string;
-  NIP?: string;
-  Value?: number;
+interface Props {
+  id?: number;
+  name?: string;
+  nip?: string;
+  value?: number;
   activateDebt: (
     id?: number | null,
   ) => {
@@ -14,18 +14,18 @@ type Debt = {
       debt: number | null;
     };
   };
-};
+}
 
-const DebtItemOverview: React.FC<Debt> = props => {
-  const { Id, Name, Value, NIP, activateDebt } = props;
+const DebtItemOverview: React.FC<Props> = props => {
+  const { id, name, value, nip, activateDebt } = props;
 
   return (
     <tr>
-      <td>{Name}</td>
-      <td>{NIP}</td>
-      <td>{Value}</td>
+      <td>{name}</td>
+      <td>{nip}</td>
+      <td>{value}</td>
       <td>
-        <button onClick={() => activateDebt(Id)} className="c-debt-item__button">
+        <button type="button" onClick={() => activateDebt(id)} className="c-debt-item__button">
           Więcej
         </button>
       </td>

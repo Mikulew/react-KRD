@@ -38,7 +38,7 @@ const SearchBar: React.FC<DebtsProps> = props => {
   const [error, setError] = useState<string | null>(null);
   const { setDebts, activateDebt } = props;
 
-  const searchFilteredDebts = async () => {
+  const searchFilteredDebts = async (): Promise<void> => {
     try {
       const result = await axios.post(`${BASE_URL}/GetFilteredDebts`, { text });
       const { data } = await result;

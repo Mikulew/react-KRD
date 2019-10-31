@@ -5,7 +5,7 @@ import { BASE_URL } from '../constants';
 const NumberCases: React.FC = () => {
   const [number, setNumber] = useState<number>(0);
 
-  const getNumberCases = async () => {
+  const getNumberCases = async (): Promise<void> => {
     const result = await axios.get(`${BASE_URL}/GetDebtsCount`);
     const { data } = await result;
     setNumber(data);

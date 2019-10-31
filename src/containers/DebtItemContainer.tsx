@@ -5,7 +5,7 @@ interface State {
   activedDebt: number | null;
 }
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state: State): State => {
   return {
     activedDebt: state.activedDebt,
   };

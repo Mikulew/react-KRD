@@ -6,6 +6,11 @@
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -13,6 +18,7 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
+    "react/prop-types": "off",
     "import/extensions": ["off"]
   }
 }
