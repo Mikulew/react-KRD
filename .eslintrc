@@ -19,6 +19,13 @@
       }
     ],
     "react/prop-types": "off",
-    "import/extensions": ["off"]
+    "import/extensions": ["off"],
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": false
+      }
+    ]
   }
 }

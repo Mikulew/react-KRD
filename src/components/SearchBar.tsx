@@ -39,12 +39,16 @@ const SearchBar: React.FC<DebtsProps> = props => {
   const { setDebts, activateDebt } = props;
 
   const searchFilteredDebts = async (): Promise<void> => {
+    setDebts([]);
     try {
       const result = await axios.post(`${BASE_URL}/GetFilteredDebts`, { text });
       const { data } = await result;
-      setDebts(data);
       activateDebt(null);
       setError(null);
+      if (data.length === 0) {
+        return setError('Nie znaleziono dłużników podanej frazy');
+      }
+      setDebts(data);
     } catch {
       setError('Podana fraza musi być większa niż 3 znaki');
     }

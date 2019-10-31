@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import '../less/components/DebtList.less';
 import axios from 'axios';
 import DebtItemContainer from '../containers/DebtItemContainer';
+import Loader from './Loader';
 import { BASE_URL } from '../constants';
 
 interface Props {
@@ -53,7 +54,9 @@ const DebtList: React.FC<Props> = props => {
         </tr>
       </thead>
       <tbody>
-        {debts &&
+        {!debts || debts.length === 0 ? (
+          <Loader />
+        ) : (
           debts.map((debt: Debt) => (
             <DebtItemContainer
               key={debt.Id}
@@ -66,7 +69,8 @@ const DebtList: React.FC<Props> = props => {
               price={debt.Price}
               number={debt.Number}
             />
-          ))}
+          ))
+        )}
       </tbody>
     </table>
   );
