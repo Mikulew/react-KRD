@@ -20,7 +20,7 @@ const DebtItemOverview: React.FC<Props> = props => {
   const { id, name, value, nip, activateDebt } = props;
 
   return (
-    <tr>
+    <tr className="text-left">
       <td>{name}</td>
       <td>{nip}</td>
       <td>{value}</td>

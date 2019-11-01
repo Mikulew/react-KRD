@@ -46,7 +46,7 @@ const DebtList: React.FC<Props> = props => {
   return (
     <table className="table">
       <thead>
-        <tr>
+        <tr className="text-left">
           <th className="debt-list__text--header">dłużnik</th>
           <th className="debt-list__text--header">nip</th>
           <th className="debt-list__text--header">kwota zadłużenia</th>
