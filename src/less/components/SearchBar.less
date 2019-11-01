@@ -1,5 +1,11 @@
 @import '../abstracts/_variables.less';
 
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .search-bar {
   height: 45px;
   border: none;
@@ -9,7 +15,8 @@
 
 .search-bar__input {
   text-indent: 10px;
-  width: 300px;
+  width: calc(100% - 145px);
+  max-width: 450px;
 }
 
 .search-bar__button {

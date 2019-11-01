@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../less/components/SearchBar.less';
 import { BASE_URL } from '../constants';
 
-export interface DebtsProps {
+export interface Props {
   setDebts: (
     debts: Debt[],
   ) => {
@@ -23,17 +23,17 @@ export interface DebtsProps {
 }
 
 export interface Debt {
-  Id?: number;
-  Name?: string;
-  NIP?: string;
-  Value?: number;
-  Address?: string;
-  DocumentType?: string;
-  Price?: number;
-  Number?: string;
+  id?: number;
+  name?: string;
+  nip?: string;
+  value?: number;
+  address?: string;
+  documentType?: string;
+  price?: number;
+  number?: string;
 }
 
-const SearchBar: React.FC<DebtsProps> = props => {
+const SearchBar: React.FC<Props> = props => {
   const [text, setText] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
   const { setDebts, activateDebt } = props;
@@ -56,7 +56,7 @@ const SearchBar: React.FC<DebtsProps> = props => {
 
   return (
     <>
-      <div>
+      <div className="search-bar-container">
         <input
           value={text}
           onChange={e => setText(e.target.value)}

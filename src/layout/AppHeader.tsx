@@ -5,12 +5,12 @@ import '../less/layout/AppHeader.less';
 
 const AppHeader: React.FC = () => {
   return (
-    <header className="l-header-container">
-      <div className="l-header-container-box l-header-container-box--left">
+    <header className="l-header-container row">
+      <div className="l-header-container-box l-header-container-box--left col-12 col-md-6">
         <p className="l-header-text">podaj numer sprawy, nazwę lub nip dłużnika</p>
         <SearchBarContainer />
       </div>
-      <div className="l-header-container-box l-header-container-box--right">
+      <div className="l-header-container-box l-header-container-box--right col-12 col-md-6">
         <p className="l-header-text l-header-text--red">całkowita liczba spraw</p>
         <p className="l-header-text l-header-text--large">
           <NumberCases />
