@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import DebtList from '../components/DebtList';
-import { setDebts } from '../duck/actions';
+import DebtList from 'components/DebtList';
+import { setDebts } from 'duck/actions';
 
 interface State {
   debts: [];

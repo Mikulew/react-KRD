@@ -1,5 +1,5 @@
+import { INITIAL_STATE } from 'constants/constants';
 import types from './types.tsx';
-import { INITIAL_STATE } from '../constants';
 
 const rootReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {

@@ -1,6 +1,6 @@
 import React from 'react';
-import DebtItemOverviewContainer from '../containers/DebtItemOverviewContainer';
-import DebtItemDetailsContainer from '../containers/DebtItemDetailsContainer';
+import DebtItemOverviewContainer from 'containers/DebtItemOverviewContainer';
+import DebtItemDetailsContainer from 'containers/DebtItemDetailsContainer';
 
 interface Props {
   id?: number;

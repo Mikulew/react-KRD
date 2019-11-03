@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import '../less/components/DebtList.less';
+import 'less/components/DebtList.less';
 import axios from 'axios';
-import DebtItemContainer from '../containers/DebtItemContainer';
+import DebtItemContainer from 'containers/DebtItemContainer';
+import { BASE_URL } from 'constants/constants';
 import Loader from './Loader';
-import { BASE_URL } from '../constants';
 
 interface Props {
   debts?: [];

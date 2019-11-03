@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchBarContainer from '../containers/SearchBarContainer';
-import NumberCases from '../components/NumberCases';
-import '../less/layout/AppHeader.less';
+import SearchBarContainer from 'containers/SearchBarContainer';
+import NumberCases from 'components/NumberCases';
+import 'less/layout/AppHeader.less';
 
 const AppHeader: React.FC = () => {
   return (

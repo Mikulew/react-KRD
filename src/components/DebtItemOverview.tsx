@@ -1,5 +1,5 @@
 import React from 'react';
-import '../less/components/DebtItem.less';
+import 'less/components/DebtItem.less';
 
 interface Props {
   id?: number;

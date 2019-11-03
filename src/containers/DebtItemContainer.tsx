@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import DebtItem from '../components/DebtItem';
+import DebtItem from 'components/DebtItem';
 
 interface State {
   activatedDebt: number | null;

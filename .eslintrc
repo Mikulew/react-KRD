@@ -4,12 +4,20 @@
     "airbnb-typescript",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript"
   ],
   "env": {
     "browser": true,
     "node": true,
     "jasmine": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
   },
   "rules": {
     "react/jsx-filename-extension": [
@@ -26,6 +34,7 @@
         "component": true,
         "html": false
       }
-    ]
+    ],
+    "import/no-unresolved": ["error", { "commonjs": true, "caseSensitive": false }]
   }
 }
