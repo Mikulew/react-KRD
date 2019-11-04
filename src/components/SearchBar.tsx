@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { BASE_URL } from 'constants/constants';
+import { Debt } from 'interfaces/interfaces';
 
 export interface Props {
   setDebts: (
@@ -19,17 +20,6 @@ export interface Props {
       debt: null;
     };
   };
-}
-
-export interface Debt {
-  id?: number;
-  name?: string;
-  nip?: string;
-  value?: number;
-  address?: string;
-  documentType?: string;
-  price?: number;
-  number?: string;
 }
 
 const SearchBar: React.FC<Props> = props => {

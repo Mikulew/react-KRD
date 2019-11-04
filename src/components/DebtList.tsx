@@ -2,30 +2,19 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import DebtItemContainer from 'containers/DebtItemContainer';
 import { BASE_URL } from 'constants/constants';
+import { DebtAPI } from 'interfaces/interfaces';
 import Loader from './Loader';
 
 interface Props {
   debts?: [];
   setDebts: (
-    debts: Debt[],
+    debts: DebtAPI[],
   ) => {
     type: string;
     payload: {
-      debts: Debt[];
+      debts: DebtAPI[];
     };
   };
-}
-
-interface Debt {
-  key?: number;
-  Id?: number;
-  Name?: string;
-  NIP?: string;
-  Value?: number;
-  Address?: string;
-  DocumentType?: string;
-  Price?: number;
-  Number?: string;
   activatedDebt?: number | null;
 }
 
@@ -56,7 +45,7 @@ const DebtList: React.FC<Props> = props => {
         {!debts || debts.length === 0 ? (
           <Loader />
         ) : (
-          debts.map((debt: Debt) => (
+          debts.map((debt: DebtAPI) => (
             <DebtItemContainer
               key={debt.Id}
               id={debt.Id}

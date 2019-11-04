@@ -1,16 +1,9 @@
 import React from 'react';
 import DebtItemOverviewContainer from 'containers/DebtItemOverviewContainer';
 import DebtItemDetailsContainer from 'containers/DebtItemDetailsContainer';
+import { Debt } from 'interfaces/interfaces';
 
-interface Props {
-  id?: number;
-  name?: string;
-  nip?: string;
-  value?: number;
-  address?: string;
-  documentType?: string;
-  price?: number;
-  number?: string;
+interface Props extends Debt {
   activatedDebt?: number | null;
 }
 

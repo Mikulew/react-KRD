@@ -1,14 +1,7 @@
 import React from 'react';
+import { Debt } from 'interfaces/interfaces';
 
-interface Props {
-  id?: number;
-  name?: string;
-  nip?: string;
-  value?: number;
-  address?: string;
-  documentType?: string;
-  price?: number;
-  number?: string;
+interface Props extends Debt {
   activateDebt: (
     id?: number | null,
   ) => {
