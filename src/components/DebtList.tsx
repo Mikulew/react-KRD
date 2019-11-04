@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import 'less/components/DebtList.less';
 import axios from 'axios';
 import DebtItemContainer from 'containers/DebtItemContainer';
 import { BASE_URL } from 'constants/constants';

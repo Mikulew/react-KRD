@@ -1,5 +1,4 @@
 import React from 'react';
-import 'less/App.less';
 import { Provider } from 'react-redux';
 import AppHeader from 'layout/AppHeader';
 import AppMain from 'layout/AppMain';

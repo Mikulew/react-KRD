@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'less/abstracts/_normalize.less';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'less/main.less';
 import App from 'App';
 import * as serviceWorker from 'serviceWorker';
 

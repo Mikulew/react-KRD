@@ -1,5 +1,4 @@
 import React from 'react';
-import 'less/layout/AppFooter.less';
 import IconEnvelope from 'assets/icon-envelope.svg';
 import IconGithub from 'assets/icon-github.svg';
 import IconCopyright from 'assets/icon-copyright.svg';

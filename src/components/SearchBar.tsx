@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import 'less/components/SearchBar.less';
 import { BASE_URL } from 'constants/constants';
 
 export interface Props {
